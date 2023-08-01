@@ -1,0 +1,31 @@
+Q1:-
+Statically Typed Language:
+1. Data types of variables are determined and checked at **compile time**.
+2. Variables must be explicitly declared with their data types before use.
+3. Type checking ensures only compatible operations are performed on variables.
+4. Types are fixed and cannot be changed during runtime.
+5. Examples: Java, C, C++, Swift.
+
+Dynamically Typed Language:
+1. Data types of variables are determined and checked at **runtime** (during execution).
+2. Variables do not require explicit type declarations; types are inferred from assigned values.
+3. Offers flexibility but may lead to type-related errors during runtime.
+4. Examples: Python, JavaScript, Ruby, PHP.
+
+Strongly Typed Language:
+1. Type safety is strictly enforced, and type conversions are not performed implicitly.
+2. Data types are fixed and cannot be implicitly converted into other types without explicit typecasting.
+3. Early detection of type-related errors during compilation.
+4. Applies to both statically and dynamically typed languages.
+5. Examples: Java, C#, Swift, Haskell.
+
+Loosely Typed Language (Weakly Typed Language):
+1. The type system is more flexible, allowing automatic type conversions.
+2. Variables can change their data type without explicit typecasting.
+3. May lead to unexpected results if not handled carefully.
+4. Emphasizes ease of use over strict type safety.
+5. Examples: JavaScript, PHP.
+
+Java falls into the category of:
+- A **statically typed** language because data types are checked at compile time.
+- A **strongly typed** language because it enforces strict type safety and doesn't allow implicit type conversions.
