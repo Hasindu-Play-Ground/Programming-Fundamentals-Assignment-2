@@ -176,4 +176,58 @@ Example 2: int to long
 
 In Example 1, the byte value `100` is widened to a short without any loss of data. Similarly, in Example 2, the int value `42` is widened to a long without any data loss. These conversions ensure that the values fit safely into the larger data types without compromising precision.
 
+########################################################################################################
+Q5:-
+In Java, both run-time constants and compile-time constants are values that remain constant during the execution of a program. However, there is a fundamental difference in when their values are determined and how they are handled during the compilation and runtime phases.
+
+*Compile-time Constant:
+1. A compile-time constant is a value that is known to the compiler at compile time itself, and its value is determined during the compilation phase.
+2. These constants are replaced directly with their actual values at compile time, and no memory allocation occurs for them during runtime.
+3. Compile-time constants are typically used for optimization purposes, as they eliminate the need to look up the value during program execution.
+4. Primitive data types, final variables (assigned with a constant expression), and constants declared with the `static final` keyword are examples of compile-time constants.
+
+*Example of Compile-time Constant:
+
+***java
+
+public class CompileTimeConstantExample {
+    public static final int NUMBER = 42; // This is a compile-time constant
+
+    public static void main(String[] args) {
+        int result = NUMBER * 2; // At compile time, NUMBER is replaced with its value (42)
+        System.out.println("Result: " + result); // Output: Result: 84
+    }
+}
+
+
+In this example, the variable `NUMBER` is declared as a `static final int`, making it a compile-time constant. During compilation, wherever `NUMBER` is used, it is replaced directly with its value (42). So, at runtime, there is no lookup required for `NUMBER`, resulting in optimized code.
+
+*Run-time Constant:
+
+1. A run-time constant is a value whose determination requires computation or method invocation at runtime, and its value is evaluated during program execution.
+2. Run-time constants are not directly replaced with their values during compilation, and memory allocation occurs for them during runtime.
+3. Constants defined with `final` that are not compile-time constants (e.g., initialized with non-constant expressions or method calls) are considered run-time constants.
+
+*Example of Run-time Constant:
+
+***java
+
+public class RunTimeConstantExample {
+    public static final int NUMBER = calculateNumber(); // This is a run-time constant
+
+    public static int calculateNumber() {
+        return 20;
+    }
+
+    public static void main(String[] args) {
+        int result = NUMBER * 2; // At runtime, calculateNumber() is invoked to get the value of NUMBER (20)
+        System.out.println("Result: " + result); // Output: Result: 40
+    }
+}
+
+
+In this example, the variable `NUMBER` is declared as `static final int`, but its value is determined at runtime by calling the method `calculateNumber()`. During compilation, `NUMBER` is not replaced with its value, and at runtime, the method `calculateNumber()` is invoked to get the actual value of `NUMBER` (20).
+
+In summary, compile-time constants are known to the compiler and replaced with their values at compile time, while run-time constants require computation or method invocation at runtime to determine their values.
+
 
