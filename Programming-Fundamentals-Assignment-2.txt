@@ -288,7 +288,6 @@ When assigning a 64-bit long data type to a 32-bit float data type in Java, type
 
 ########################################################################################################
 Q8:-
-
 1. Historical Reasons:
 When Java was initially designed, the `int` data type was chosen as the default for integer literals because it strikes a balance between being able to represent a wide range of whole numbers efficiently while also being memory-friendly. Similarly, the `double` data type was selected as the default for floating-point literals because it provides a reasonable compromise between precision and performance for most general-purpose calculations.
 
@@ -301,3 +300,6 @@ Java aims to be a simple and pragmatic language, promoting ease of use and reada
 4. Implicit Narrowing and Widening Conversions:
 Java allows implicit narrowing conversions for assigning smaller data types to larger ones (e.g., assigning an `int` to a `long`). However, implicit widening conversions (assigning a larger data type to a smaller one) are not allowed by default to avoid potential loss of data or precision. Choosing `int` and `double` as defaults reduces the need for explicit casting in most scenarios.
 
+########################################################################################################
+Q9:-
+Implicit narrowing primitive conversion is limited to `byte`, `char`, `int`, and `short` in Java because these integral data types have a smaller range than `int` (32 bits). Restricting implicit narrowing ensures safety by avoiding potential data loss and maintaining predictable code behavior. Explicit casting is required for conversions between larger and smaller data types to handle data loss explicitly.
