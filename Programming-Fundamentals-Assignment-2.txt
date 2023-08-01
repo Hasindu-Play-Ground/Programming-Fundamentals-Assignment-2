@@ -303,3 +303,18 @@ Java allows implicit narrowing conversions for assigning smaller data types to l
 ########################################################################################################
 Q9:-
 Implicit narrowing primitive conversion is limited to `byte`, `char`, `int`, and `short` in Java because these integral data types have a smaller range than `int` (32 bits). Restricting implicit narrowing ensures safety by avoiding potential data loss and maintaining predictable code behavior. Explicit casting is required for conversions between larger and smaller data types to handle data loss explicitly.
+
+########################################################################################################
+Q10:-
+
+*Widening Primitive Conversion:
+It occurs when a value of a smaller data type is assigned to a variable of a larger data type without data loss. Examples include assigning `int` to `long` or `float` to `double`.
+
+*Narrowing Primitive Conversion:
+It happens when a value of a larger data type is assigned to a variable of a smaller data type. Data loss may occur. Examples include assigning `long` to `int` or `double` to `float`.
+
+*Conversion from short to char:
+
+The conversion from `short` to `char` is not classified as either widening or narrowing because both data types have the same size (16 bits) and their value ranges overlap (0 to 65535). Converting between `short` and `char` doesn't lead to data loss; thus, it's considered an "identity conversion" rather than a widening or narrowing conversion.
+
+
