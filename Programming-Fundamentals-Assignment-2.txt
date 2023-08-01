@@ -68,7 +68,6 @@ Q2:-
 
 ##################################################################################################################
 Q3:-
-
 In Java, identity conversion is a type conversion where a value is explicitly or implicitly converted to its own type without any modification. It is a trivial conversion that ensures type compatibility, and no data loss or change in representation occurs during this process. Identity conversion is applied when the target type is the same as the source type, making the conversion unnecessary.
 
 Two examples of identity conversion in Java:
@@ -106,4 +105,75 @@ public class IdentityConversionExample2 {
 In this example, a `String` variable `message` is initialized with the value `"Hello, Java!"`. The `printMessage` method takes a `String` parameter `msg`, and we call this method, passing `message` as an argument. The argument passing is an example of identity conversion, as both the argument (`message`) and the parameter (`msg`) are of the same type (`String`). The conversion is not required, as the types match, and the value of `message` is directly passed to the method.
 
 In both examples, identity conversion is utilized to ensure type compatibility without any change in the value or type representation. It demonstrates the efficiency and convenience of handling same-type conversions without the need for any actual conversion process.
+
+#######################################################################################################################
+Q4:-
+Primitive widening conversion in Java is an automatic type conversion that occurs when a data value of a smaller primitive type is assigned to a variable of a larger primitive type. In this process, the value is widened to fit into the larger data type without any loss of data. Java performs primitive widening conversions implicitly, as they involve widening the range of values and, therefore, do not result in any data loss or precision issues.
+
+The primitive data types in Java and their sizes, in increasing order of size, are as follows:
+
+1. byte (1 byte)
+2. short (2 bytes)
+3. int (4 bytes)
+4. long (8 bytes)
+5. float (4 bytes)
+6. double (8 bytes)
+
+The implicit primitive widening conversions are as follows:
+
+byte → short → int → long → float → double
+
+Now, let's demonstrate primitive widening conversions with examples and diagrams:
+
+*Example 1: byte to short
+
+***java
+public class PrimitiveWideningExample {
+    public static void main(String[] args) {
+        byte b = 100;
+        short s = b; // Widening conversion: byte to short
+        System.out.println("Value of s: " + s); // Output: Value of s: 100
+    }
+}
+
+
+*Example 2: int to long
+
+***java
+public class PrimitiveWideningExample {
+    public static void main(String[] args) {
+        int num = 42;
+        long bigNum = num; // Widening conversion: int to long
+        System.out.println("Value of bigNum: " + bigNum); // Output: Value of bigNum: 42
+    }
+}
+
+
+In both examples, we can observe the following:
+
+1. The source variable (`b` in Example 1 and `num` in Example 2) has a smaller data type (byte and int, respectively).
+2. The target variable (`s` in Example 1 and `bigNum` in Example 2) has a larger data type (short and long, respectively).
+3. The assignment statements (`short s = b;` and `long bigNum = num;`) perform primitive widening conversions automatically.
+
+*Diagrammatic Representation:
+The diagrams below illustrate how primitive widening conversions work:
+
+***
+Example 1: byte to short
+   byte (8 bits)   →   short (16 bits)
+  ┌─────────────┐     ┌───────────────────┐
+  │    100      │     │         100       │
+  └─────────────┘     └───────────────────┘
+       (b)                  (s)
+
+Example 2: int to long
+   int (32 bits)   →    long (64 bits)
+  ┌─────────────┐      ┌───────────────────┐
+  │     42      │      │         42        │
+  └─────────────┘      └───────────────────┘
+      (num)                (bigNum)
+
+
+In Example 1, the byte value `100` is widened to a short without any loss of data. Similarly, in Example 2, the int value `42` is widened to a long without any data loss. These conversions ensure that the values fit safely into the larger data types without compromising precision.
+
 
