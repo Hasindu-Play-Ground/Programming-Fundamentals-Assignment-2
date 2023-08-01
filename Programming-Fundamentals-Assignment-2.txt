@@ -285,3 +285,19 @@ In summary, implicit narrowing primitive conversions happen automatically when t
 ########################################################################################################
 Q7:-
 When assigning a 64-bit long data type to a 32-bit float data type in Java, type casting is used. However, due to the smaller size and limited precision of the float data type, there may be a loss of precision during the conversion. It's important to be cautious about potential data loss when performing this type conversion. If precision is crucial, consider using the `double` data type instead, which provides better precision with 64 bits.
+
+########################################################################################################
+Q8:-
+
+1. Historical Reasons:
+When Java was initially designed, the `int` data type was chosen as the default for integer literals because it strikes a balance between being able to represent a wide range of whole numbers efficiently while also being memory-friendly. Similarly, the `double` data type was selected as the default for floating-point literals because it provides a reasonable compromise between precision and performance for most general-purpose calculations.
+
+2. Performance Considerations:
+The `int` and `double` data types are native data types in Java, which means they can be processed more efficiently by the underlying hardware and the Java Virtual Machine (JVM). Operations on `int` and `double` values can be faster compared to other data types because they map directly to the native machine representations for integers and floating-point numbers.
+
+3. Language Design Principles:
+Java aims to be a simple and pragmatic language, promoting ease of use and readability. Using `int` for integer literals and `double` for floating-point literals aligns with these principles as they are the most commonly used and widely understood data types for their respective categories.
+
+4. Implicit Narrowing and Widening Conversions:
+Java allows implicit narrowing conversions for assigning smaller data types to larger ones (e.g., assigning an `int` to a `long`). However, implicit widening conversions (assigning a larger data type to a smaller one) are not allowed by default to avoid potential loss of data or precision. Choosing `int` and `double` as defaults reduces the need for explicit casting in most scenarios.
+
