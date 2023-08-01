@@ -282,3 +282,6 @@ For an implicit narrowing primitive conversion to occur, the following condition
 
 In summary, implicit narrowing primitive conversions happen automatically when the value can be safely represented within the smaller data type, while explicit narrowing conversions (casting) are used when the value may result in data loss or is outside the range of the target data type.
 
+########################################################################################################
+Q7:-
+When assigning a 64-bit long data type to a 32-bit float data type in Java, type casting is used. However, due to the smaller size and limited precision of the float data type, there may be a loss of precision during the conversion. It's important to be cautious about potential data loss when performing this type conversion. If precision is crucial, consider using the `double` data type instead, which provides better precision with 64 bits.
