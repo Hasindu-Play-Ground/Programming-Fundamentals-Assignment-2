@@ -230,4 +230,55 @@ In this example, the variable `NUMBER` is declared as `static final int`, but it
 
 In summary, compile-time constants are known to the compiler and replaced with their values at compile time, while run-time constants require computation or method invocation at runtime to determine their values.
 
+########################################################################################################
+Q6:-
+In Java, primitive type conversions can be categorized into two types: implicit (automatic) narrowing primitive conversions and explicit narrowing conversions (casting).
+
+1. Implicit (Automatic) Narrowing Primitive Conversions:
+- Implicit narrowing conversions occur automatically when a value of a larger data type is assigned to a variable of a smaller data type.
+- These conversions are safe when the value being converted can be represented within the smaller data type without any loss of data or precision.
+- Implicit narrowing conversions happen automatically without the need for explicit casting and are performed when the compiler determines that no data loss will occur.
+- Examples of implicit narrowing conversions: int to byte, double to float.
+
+*Example of Implicit Narrowing Conversion:
+
+***java
+public class ImplicitNarrowingExample {
+    public static void main(String[] args) {
+        int intValue = 1000;
+        byte byteValue = intValue; // Implicit narrowing: int to byte
+        System.out.println("Value of byteValue: " + byteValue); // Output: Value of byteValue: -24
+    }
+}
+
+
+In this example, the int value `1000` is automatically narrowed to a byte value. Since the range of byte is from -128 to 127, the int value `1000` cannot be represented in a byte without loss of data, and the result is truncated (1000 % 256 = -24).
+
+2. Explicit Narrowing Conversions (Casting):
+
+- Explicit narrowing conversions, also known as casting, are performed when a value of a larger data type needs to be explicitly converted to a variable of a smaller data type.
+- Casting is done using parentheses and specifying the target data type before the value.
+- Casting may result in data loss or loss of precision if the value cannot be represented accurately in the target data type.
+- Examples of explicit narrowing conversions: int to short, double to int.
+
+*Example of Explicit Narrowing Conversion (Casting):
+
+***java
+
+public class ExplicitNarrowingExample {
+    public static void main(String[] args) {
+        double doubleValue = 123.456;
+        int intValue = (int) doubleValue; // Explicit narrowing: double to int
+        System.out.println("Value of intValue: " + intValue); // Output: Value of intValue: 123
+    }
+}
+
+In this example, the double value `123.456` is explicitly narrowed to an int value using casting. The fractional part of the double value is discarded, resulting in `intValue` having the value `123`.
+
+*Conditions for Implicit Narrowing Primitive Conversion:
+
+For an implicit narrowing primitive conversion to occur, the following condition must be met:
+- The value being converted must be within the valid range of the target data type. If the value exceeds the range of the target data type, a compilation error will occur, and explicit casting is required to perform the conversion.
+
+In summary, implicit narrowing primitive conversions happen automatically when the value can be safely represented within the smaller data type, while explicit narrowing conversions (casting) are used when the value may result in data loss or is outside the range of the target data type.
 
